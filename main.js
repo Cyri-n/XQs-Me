@@ -1,16 +1,5 @@
 // code sketch
 
-const randomApology = situation => {
-  switch (situation) {
-    case Late:
-      //retrieve Late excuse
-      break;
-    case Leave:
-      //retrieve Leave excuse
-      break;
-  }
-  return //Late or Leave excuse
-}
 
 /*
 Late excuse object?
@@ -18,7 +7,34 @@ Five unique variables for return phrase
 -[Initial apology(optional)][First person possessive + verb/noun]
 [Failure/unfortunate event],[Conclusive consequence]-
 */
+const lateXQs = {
+  const _firstApology = [],
+  const _dependents = {
+    const _second = [],
+    const _third = []
+  },
+  const _fourth = [],
 
+  get first() {
+
+  },
+
+  get second() {
+
+  },
+
+  get third() {
+
+  },
+
+  get fourth() {
+
+  },
+
+  createXQs() {
+    return // all gets
+  }
+}
 
 /*
 Leave excuse object?
@@ -27,15 +43,45 @@ Four unique variables for return phrase
 [depart declaration]-
 */
 
+const leaveXQs = {
+  const _first = [],
+  const _second = [],
+  const _third = [],
+  const _fourth = [],
 
+    get first() {
 
+    },
 
+    get second() {
 
+    },
 
+    get third() {
 
+    },
 
-const XQs-Me = randomApology(); // Late or Leave argmnt
-// Two commands or two function argmnts?
+    get fourth() {
+
+    },
+
+    createXQs() {
+      return // all gets
+    }
+}
+
+const randomApology = situation => {
+  switch (situation) {
+    case imLate:
+      return lateXQs.createXQs();
+      break;
+    case need2Go:
+      return leaveXQs.createXQs();
+      break;
+  }
+}
+
+const XQs-Me = randomApology(situation); // imLate / need2Go
 
 /* Word selectors
 Math.floor(Math.random() * thing.length)
