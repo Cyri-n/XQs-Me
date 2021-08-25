@@ -1,90 +1,91 @@
-// code sketch
-
+// have hold ~10 values NOT loop? have random number be global function?
 
 /*
-Late excuse object?
-Five unique variables for return phrase
 -[Initial apology(optional)][First person possessive + verb/noun]
 [Failure/unfortunate event],[Conclusive consequence]-
 */
 const lateXQs = {
-  const _firstApology = [],
-  const _dependents = {
-    const _second = [],
-    const _third = []
+  _first: ["placeholder1", "placeholder2"],
+  _dependents: {
+    _second: ["plho1", "plho2"],
+    _third: ["placeh1", "placeh2"]
   },
-  const _fourth = [],
+  _fourth: ["pholder1", "pholder2"],
 
-  get first() {
-
-  },
-
-  get second() {
-
+  get first () {
+    const word1 = Math.floor(Math.random() * this._first.length);
+    return this._first[word1];
   },
 
-  get third() {
-
+  get second () {
+    const word2 = Math.floor(Math.random() * this._dependents._second.length);
+    return this._dependents._second[word2];
   },
 
-  get fourth() {
-
+  get third () {
+    const word3 = Math.floor(Math.random() * this._dependents._third.length);
+    return this._dependents._third[word3];
   },
 
-  createXQs() {
-    return // all gets
+  get fourth () {
+    const word4 = Math.floor(Math.random() * this._fourth.length);
+    return this._fourth[word4];
+  },
+
+  createXQs () {
+    return `${this.first} ${this.second} ` +
+           `${this.third}, ${this.fourth}.`;
   }
 }
 
+
 /*
-Leave excuse object?
-Four unique variables for return phrase
 -[First person possessive][task/plan][Vague time (optional)],
 [depart declaration]-
 */
 
 const leaveXQs = {
-  const _first = [],
-  const _second = [],
-  const _third = [],
-  const _fourth = [],
+  _first: ["p1", "p2"],
+  _second: ["pl1", "pl2"],
+  _third: ["ph1", "ph2"],
+  _fourth: ["placeho1", "placeho2"],
 
-    get first() {
+  get first () {
+    const word1 = Math.floor(Math.random() * this._first.length);
+    return this._first[word1];
+  },
 
-    },
+  get second () {
+    const word2 = Math.floor(Math.random() * this._second.length);
+    return this._second[word2];
+  },
 
-    get second() {
+  get third () {
+    const word3 = Math.floor(Math.random() * this._third.length);
+    return this._third[word3];
+  },
 
-    },
+  get fourth () {
+    const word4 = Math.floor(Math.random() * this._fourth.length);
+    return this._fourth[word4];
+  },
 
-    get third() {
-
-    },
-
-    get fourth() {
-
-    },
-
-    createXQs() {
-      return // all gets
-    }
-}
-
-const randomApology = situation => {
-  switch (situation) {
-    case imLate:
-      return lateXQs.createXQs();
-      break;
-    case need2Go:
-      return leaveXQs.createXQs();
-      break;
+  createXQs () {
+    return `${this.first} ${this.second} ` +
+           `${this.third}, ${this.fourth}.`;
   }
 }
 
-const XQs-Me = randomApology(situation); // imLate / need2Go
-
-/* Word selectors
-Math.floor(Math.random() * thing.length)
-Math.floor(Math.random() * thing2.length)
-Math.floor(Math.random() * thing3.length)
-*/
+const XQs_Me = situation => {
+  switch (situation) {
+    case "late":
+      return lateXQs.createXQs();
+      break;
+    case "leave":
+      return leaveXQs.createXQs();
+      break;
+    default:
+    return "If you're late, type 'late' as the function argument. " +
+    "If you need to get out of an awkward situation, type 'leave'.";
+  }
+}
